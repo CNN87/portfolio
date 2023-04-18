@@ -1,0 +1,208 @@
+@font-face {
+    font-family: Poppins;
+    src: url(assets/fonts/poppins-v20-latin-100.woff);
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(assets/fonts/poppins-v20-latin-regular.woff);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(assets/fonts/poppins-v20-latin-700.woff);
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* fixed colors*/
+:root {
+    --mainDark: #141D2F;
+    --mainDarkTransparent: #141d2fe6;
+    --mainOrange: #E86F00;
+    --mainLightOrange: #FA7902;
+    --mainRed: #FF4747;
+    --mainPurple: #D61CE6;
+    --mainWhite: white;
+
+    --ff-primary: 'Poppins', sans-serif;
+
+    --fw-small: 100;
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+/* Remove default margin */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Set core root defaults */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Set core body defaults */
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #101828;
+    color: var(--mainWhite);
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+h1 {
+    display: inline;
+    font-size: clamp(45px, 10vw, 90px);
+    font-weight: var(--fw-bold);
+    margin: 26px 0;
+    line-height: 75px;
+    white-space: nowrap;
+}
+
+a {
+    cursor: pointer;
+    z-index: 3;
+}
+
+p {
+    margin: 26px 0;
+    letter-spacing: 1px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+header {
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section {
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainDark);
+    overflow-x: clip;
+}
+
+.padding-block-big {
+    padding-block: 200px;
+}
+
+.padding-top {
+    padding-top: 140px;
+}
+
+
+.padding-bottom {
+    padding-bottom: 120px;
+}
+
+.container {
+    position: relative;
+    width: 90%;
+    margin-inline: auto;
+}
+
+.even-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.even-columns-about-me {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+@media (max-width: 1100px) {
+    .even-columns-about-me {
+        flex-direction: column-reverse;
+        gap: 5em;
+    }
+}
+
+@media(max-width: 900px) {
+    .even-columns {
+        flex-direction: column-reverse;
+        gap: 5em;
+    }
+}
+
+.main-button {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 23px;
+    font-weight: var(--fw-regular);
+    color: var(--mainWhite);
+    background-color: var(--mainOrange);
+    transition: 300ms;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+        background-color: var(--mainRed);
+    }
+}
+
+@media (max-width:900px) {
+    .main-button {
+        font-size: 16px;
+    }
+}
+
+.mainHeadline {
+    font-size: var(--fw-mainHeadline);
+    font-weight: var(--fw-bold);
+}

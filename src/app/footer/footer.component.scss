@@ -1,0 +1,88 @@
+footer {
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainDark);
+    overflow: hidden;
+    border-top: 3px solid var(--mainOrange);
+    padding-top: 80px;
+    padding-bottom: 56px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: var(--nav-size);
+    font-weight: 400;
+}
+
+.align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.logo-impressum-container {
+    display: flex;
+    flex-direction: column;
+}
+.impressum:hover {
+    border-bottom: 2px solid #FF4747;
+    line-height: 120%;
+}
+
+.logo-2 {
+    font-size: 34px;
+}
+
+.social-media-container {
+    display: flex;
+    align-items: center;
+}
+
+.social-media-container-img {
+    img {
+        width: 35px;
+        object-fit: cover;
+        transition: 300ms;
+        margin-left: 21px;
+        margin-right: 21px;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.main-footer-content-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 750px){
+    footer {
+        padding-block: 40px;
+    }
+
+    .main-footer-content-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+    .imprint-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+}
+
+.flex-direction-column {
+    flex-direction: column !important;
+}
+
+.no-gap {
+    gap: unset !important;
+}
+

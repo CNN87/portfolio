@@ -1,0 +1,72 @@
+<section class="overflow-hidden padding-bottom">
+    <div class="container">
+        <img class="red-shadow-2" src="../../assets/img/red-shadow-2.png" alt="">
+        <div class="contact-h1-wrapper">
+            <h1>Contact</h1>
+            <div class="orange-line-container">
+                <div class="orange-line"></div>
+            </div>
+        </div>
+        <div class="even-columns flex-column">
+            <div class="contact-content">
+                <div class="contact-h2-wrapper">
+                    <div class="purple-line-container">
+                        <div class="purple-line"></div>
+                    </div>
+                    <h2>Got a problem to solve?</h2>
+                </div>    
+                    <p>Contact me trough this form, I am interested in hearing<br>
+                        you, knowing your ideas and contributing to your projects<br>
+                        with my work.
+                    </p>
+                    <p>Need a Frontend Developer? <span class="contact-me">Contact me!</span></p>
+            </div>
+            <!-- <form action="https://sinan-simsek.developerakademie.net/send_mail/send_mail.php" method="post">
+                <div class="contact-input">
+                    <input type="text" placeholder="Your name" name="name" required>
+                    <input type="email" placeholder="Your email" name="email" required>
+                    <textarea placeholder="Your message ..." name="message" required></textarea>
+                    <button class="main-button">Send message :)</button>
+                </div>
+            </form> -->
+
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()" >
+                <div class="contact-input">
+                        <div class="inputwidth">
+                            <input formControlName="name" type="text" placeholder="Your name" required>
+                            <div *ngIf="myForm.get('name')?.invalid && isSubmitted">
+                                <p class="error" > Please provide a name.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="inputwidth">
+                            <input formControlName="email" type="email" placeholder="Your email" required>
+                            <div *ngIf="myForm.get('email')?.invalid && isSubmitted">
+                                <p class="error" > Please provide a valid email address.</p>
+                            </div>
+                        </div>
+
+                        <div class="inputwidth">
+                            <textarea formControlName="message" placeholder="Your message ..." required></textarea>
+
+                            <div *ngIf="myForm.get('message')?.invalid && isSubmitted">
+                                <p class="error" > Messages must be at least 5 characters long.</p>
+                            </div>
+                        </div>
+                    
+
+
+                    <button class="main-button" type="submit" >Send message :)</button>
+                </div>
+            </form>
+
+            
+
+        </div>
+        <div class="up-button">
+            <a href="#">
+                <img src="../../assets/img/scrolluparrow.svg" alt="">
+            </a>
+        </div>
+    </div>
+</section>
