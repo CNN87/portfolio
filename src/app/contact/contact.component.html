@@ -36,7 +36,7 @@
                             <div class="inputfield">
                                 <input formControlName="name" type="text" placeholder="Your name" required>
                                 <div *ngIf="myForm.get('name')?.invalid && isSubmitted">
-                                    <div *ngIf="myForm.get('name')?.dirty"><img src="../../assets/img/inputwrong.svg" alt=""></div>
+                                    <img src="../../assets/img/inputwrong.svg" alt="">
                                 </div>
                                 <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div>
                                 <div *ngIf="myForm.get('name')?.valid"><img src="../../assets/img/inputcorrect.svg" alt=""></div>
