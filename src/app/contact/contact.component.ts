@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,31 +7,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit  {
-  
-  // constructor() { }
-
-  // ngOnInit(): void {
-  // }
-
-  // // public contactForm: FormGroup = new FormGroup({
-  // //   name: new FormControl('', [Validators.required],[]),
-  // //   email: new FormControl('', [Validators.required, Validators.email],[]),
-  // //   message: new FormControl('', [Validators.required],[]),
-  // // })
-
-  // onSubmit() {
-  //   // TODO: Use EventEmitter with form value
-    // if (this.contactForm.valid){
-    //   console.log("Form Submitted!", this.contactForm.value);
-    //   this.contactForm.reset();
-    // }
-
-  //   // if (this.contactForm.controls['name'].dirty){
-      
-  //   // }
-    
-  // }
-
+  @ViewChild('myContact') myContact!: ElementRef;
+  @ViewChild('nameField') nameField!: ElementRef;
+  @ViewChild('emailField') emailField!: ElementRef;
+  @ViewChild('messageField') messageField!: ElementRef;
+  @ViewChild('btnSendField') btnSendField!: ElementRef;
 
   myForm!: FormGroup;
   isSubmitted = false;
@@ -46,13 +26,53 @@ export class ContactComponent implements OnInit  {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.isSubmitted = true;
     if (this.myForm.valid){
       this.isSubmitted = false;
       console.log("Form Submitted!", this.myForm.value);
+      
+      this.sendMail();
       this.myForm.reset();
     }
+  }
+
+  async sendMail(){
+    // https://sinan-simsek.developerakademie.net/send_mail/send_mail.php
+    console.log('sending Mail', this.myContact);
+
+    let nameField = this.nameField.nativeElement;
+    let emailField = this.emailField.nativeElement;
+    let messageField = this.messageField.nativeElement;
+    let btnSendField = this.btnSendField.nativeElement;
+
+    nameField.disabled = true;
+    emailField.disabled = true;
+    messageField.disabled = true;
+    btnSendField.disabled = true;
+
+    // animation triggern
+
+    let fd = new FormData();
+    fd.append('name', nameField.value);
+    fd.append('email', emailField.value);
+    fd.append('message', messageField.value);
+
+    // senden
+    await fetch('https://sinan-simsek.developerakademie.net/send_mail/send_mail.php',
+      {
+        method: 'POST',
+        body: fd
+
+
+      }
+    );
+
+      // text anzeigen nachricht gesendet
+    nameField.disabled = false;
+    emailField.disabled = false;
+    messageField.disabled = false;
+    btnSendField.disabled = false;
   }
 
   

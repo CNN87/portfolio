@@ -30,11 +30,11 @@
                 </div>
             </form> -->
 
-            <form [formGroup]="myForm" (ngSubmit)="onSubmit()" >
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()"  #myContact>
                 <div class="contact-input">
                         <div class="inputwidth">
                             <div class="inputfield">
-                                <input formControlName="name" type="text" placeholder="Your name" required>
+                                <input formControlName="name" type="text" placeholder="Your name" name="name" #nameField required>
                                 <div *ngIf="myForm.get('name')?.invalid && isSubmitted">
                                     <img src="../../assets/img/inputwrong.svg" alt="">
                                 </div>
@@ -48,7 +48,7 @@
                     
                         <div class="inputwidth">
                             <div class="inputfield">
-                                <input formControlName="email" type="email" placeholder="Your email" required>
+                                <input formControlName="email" type="email" placeholder="Your email" name="email" #emailField required>
                                 <div *ngIf="(myForm.get('email')?.invalid && isSubmitted) ">
                                     <img src="../../assets/img/inputwrong.svg" alt="">
                                 </div>
@@ -62,7 +62,7 @@
 
                         <div class="inputwidth">
                             <div class="textareafield">
-                                <textarea formControlName="message" placeholder="Your message ..." required></textarea>
+                                <textarea formControlName="message" placeholder="Your message ..." name="message" #messageField required></textarea>
                                 <div *ngIf="myForm.get('message')?.invalid && isSubmitted">
                                     <img src="../../assets/img/inputwrong.svg" alt="">
                                 </div>
@@ -76,7 +76,7 @@
                     
 
 
-                    <button class="main-button" type="submit" >Send message :)</button>
+                    <button class="main-button" type="submit" #btnSendField >Send message :)</button>
                 </div>
             </form>
 

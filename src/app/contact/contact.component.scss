@@ -103,7 +103,15 @@
         min-width: 80%;
         padding-inline: 20px;
         cursor: pointer;
-        outline: none;    
+        outline: none; 
+        
+        &:-webkit-autofill,
+                :-webkit-autofill:hover,
+                :-webkit-autofill:focus,
+                :-webkit-autofill:active {
+                    transition: background-color 5000s ease-in-out 0s;
+                    -webkit-text-fill-color: #fff !important;
+                }
     }
     &::placeholder {
         color: white;
