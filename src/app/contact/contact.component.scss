@@ -82,43 +82,73 @@
     pointer-events: none;
 }
 
-
-
-input {
-    color: white;
-    font-family: 'Poppins';
-    font-size: var(--text-size);
+.inputfield{
+    display: flex;
+    flex-direction: row;
     border: 1px solid var(--mainRed);
     border-radius: 10px;
-    background-color: var(--mainDark);
     height: 50px;
     min-width: 90%;
-    padding-inline: 20px;
-    cursor: pointer;
+    align-items: center;
+    justify-content: center;
 
+    input {
+        color: white;
+        font-family: 'Poppins';
+        font-size: var(--text-size);
+        border: none;
+        // border-radius: 10px;
+        background-color: var(--mainDark);
+        height: 50px;
+        min-width: 80%;
+        padding-inline: 20px;
+        cursor: pointer;
+        outline: none;    
+    }
     &::placeholder {
         color: white;
         padding-left: 30px;
     }
-
     &:hover {
         border: 1px solid var(--mainPurple);
     }
+    &.ng-dirty{
+        border: 1px solid var(--mainRed) !important;
+    }
+    &.ng-valid {
+        border: 1px solid green !important;
+    }
 }
 
-textarea {
-    color: white;
-    font-family: 'Poppins';
+.textareafield{
+    display: flex;
+    flex-direction: row;
     border: 1px solid var(--mainRed);
     border-radius: 10px;
-    background-color: var(--mainDark);
-    height: 200px;
+    min-height: 200px;
     min-width: 90%;
-    color: white;
-    font-size: var(--text-size);
-    font-weight: 400;
-    padding: 20px;
-    cursor: pointer;
+    align-items: baseline;
+    justify-content: center;
+    background-color: var(--mainDark);
+
+    textarea {
+        color: white;
+        font-family: 'Poppins';
+        border: none;
+        // border-radius: 10px;
+        background-color: var(--mainDark);
+        min-height: 200px;
+        min-width: 80%;
+        color: white;
+        font-size: var(--text-size);
+        font-weight: 400;
+        padding: 20px;
+        cursor: pointer;
+        outline: none;   
+        resize: none;
+    }
+
+
 
     &::placeholder {
         color: white;
@@ -128,7 +158,18 @@ textarea {
     &:hover {
         border: 1px solid var(--mainPurple);
     }
+
+    &.ng-dirty{
+        border: 1px solid var(--mainRed) !important;
+    }
+
+    &.ng-valid {
+        border: 1px solid green !important;
+    }
+
 }
+
+
 
 .contact-content-input-container {
     display: flex;
@@ -138,6 +179,7 @@ textarea {
 form {
     min-width: 50%;
     z-index: 3;
+    
 }
 
 @media (max-width: 900px) {
@@ -156,6 +198,7 @@ form {
     justify-content: center;
     align-items: center;
     gap: 40px;
+    min-height: 50%;
 }
 
 .headline-container {
@@ -189,6 +232,7 @@ form {
     }
 }
 .error{
+    position: absolute;
     bottom: -20px;
     color: red;
     font-size: 12px;
@@ -197,5 +241,5 @@ form {
 }
 .inputwidth{
     width: 100%;
-    
+    position: relative;
 }

@@ -15,7 +15,7 @@
                     </div>
                     <h2>Got a problem to solve?</h2>
                 </div>    
-                    <p>Contact me trough this form, I am interested in hearing<br>
+                    <p>Contact me through this form, I am interested in hearing<br>
                         you, knowing your ideas and contributing to your projects<br>
                         with my work.
                     </p>
@@ -33,22 +33,42 @@
             <form [formGroup]="myForm" (ngSubmit)="onSubmit()" >
                 <div class="contact-input">
                         <div class="inputwidth">
-                            <input formControlName="name" type="text" placeholder="Your name" required>
+                            <div class="inputfield">
+                                <input formControlName="name" type="text" placeholder="Your name" required>
+                                <div *ngIf="myForm.get('name')?.invalid && isSubmitted">
+                                    <div *ngIf="myForm.get('name')?.dirty"><img src="../../assets/img/inputwrong.svg" alt=""></div>
+                                </div>
+                                <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div>
+                                <div *ngIf="myForm.get('name')?.valid"><img src="../../assets/img/inputcorrect.svg" alt=""></div>
+                            </div>
                             <div *ngIf="myForm.get('name')?.invalid && isSubmitted">
-                                <p class="error" > Please provide a name.</p>
+                                <p class="error" > Your name is required!</p>
                             </div>
                         </div>
                     
                         <div class="inputwidth">
-                            <input formControlName="email" type="email" placeholder="Your email" required>
+                            <div class="inputfield">
+                                <input formControlName="email" type="email" placeholder="Your email" required>
+                                <div *ngIf="(myForm.get('email')?.invalid && isSubmitted) ">
+                                    <img src="../../assets/img/inputwrong.svg" alt="">
+                                </div>
+                                <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div>
+                                <div *ngIf="myForm.get('email')?.valid"><img src="../../assets/img/inputcorrect.svg" alt=""></div>
+                            </div>
                             <div *ngIf="myForm.get('email')?.invalid && isSubmitted">
-                                <p class="error" > Please provide a valid email address.</p>
+                                <p class="error" > Your email is required!</p>
                             </div>
                         </div>
 
                         <div class="inputwidth">
-                            <textarea formControlName="message" placeholder="Your message ..." required></textarea>
-
+                            <div class="textareafield">
+                                <textarea formControlName="message" placeholder="Your message ..." required></textarea>
+                                <div *ngIf="myForm.get('message')?.invalid && isSubmitted">
+                                    <img src="../../assets/img/inputwrong.svg" alt="">
+                                </div>
+                                <div *ngIf="myForm.get('message')?.invalid && myForm.get('message')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div>
+                                <div *ngIf="myForm.get('message')?.valid"><img src="../../assets/img/inputcorrect.svg" alt=""></div>
+                            </div>
                             <div *ngIf="myForm.get('message')?.invalid && isSubmitted">
                                 <p class="error" > Messages must be at least 5 characters long.</p>
                             </div>
