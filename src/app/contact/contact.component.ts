@@ -63,10 +63,12 @@ export class ContactComponent implements OnInit  {
       {
         method: 'POST',
         body: fd
-
-
+        
       }
     );
+    
+    document.getElementById('btnSend')?.classList.remove('dnone');
+    setTimeout(function(){document.getElementById('btnSend')?.classList.add('dnone')}, 2000);
 
       // text anzeigen nachricht gesendet
     nameField.disabled = false;
@@ -75,5 +77,4 @@ export class ContactComponent implements OnInit  {
     btnSendField.disabled = false;
   }
 
-  
 }

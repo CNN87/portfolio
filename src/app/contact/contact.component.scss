@@ -251,3 +251,17 @@ form {
     width: 100%;
     position: relative;
 }
+
+.sendP{
+    color: greenyellow !important;
+    position: absolute;
+    bottom: -20px;
+    display: flex;
+    font-size: 12px;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.dnone{
+    display: none;
+}

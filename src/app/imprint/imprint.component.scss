@@ -1,0 +1,20 @@
+.imprint-container {
+    padding-top: 180px;
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    min-width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainDark);
+    overflow-x: clip;
+    gap: 10px;
+}
+.imprint-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    align-items: baseline;
+
+}
