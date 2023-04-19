@@ -21,27 +21,19 @@
                     </p>
                     <p data-aos="fade-right">Need a Frontend Developer? <span class="contact-me">Contact me!</span></p>
             </div>
-            <!-- <form action="https://sinan-simsek.developerakademie.net/send_mail/send_mail.php" method="post">
-                <div class="contact-input">
-                    <input type="text" placeholder="Your name" name="name" required>
-                    <input type="email" placeholder="Your email" name="email" required>
-                    <textarea placeholder="Your message ..." name="message" required></textarea>
-                    <button class="main-button">Send message :)</button>
-                </div>
-            </form> -->
-
+            
             <form [formGroup]="myForm" (ngSubmit)="onSubmit()"  #myContact>
                 <div class="contact-input" data-aos="fade-left">
                         <div class="inputwidth">
                             <div class="inputfield">
                                 <input formControlName="name" type="text" placeholder="Your name" name="name" #nameField required>
-                                <div *ngIf="myForm.get('name')?.invalid && isSubmitted">
+                                <div *ngIf="(myForm.get('name')?.invalid && isSubmitted) || (myForm.get('name')?.invalid && myForm.get('name')?.touched)">
                                     <img src="../../assets/img/inputwrong.svg" alt="">
                                 </div>
-                                <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div>
+                                <!-- <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div> -->
                                 <div *ngIf="myForm.get('name')?.valid"><img src="../../assets/img/inputcorrect.svg" alt=""></div>
                             </div>
-                            <div *ngIf="myForm.get('name')?.invalid && isSubmitted">
+                            <div *ngIf="(myForm.get('name')?.invalid && isSubmitted) || (myForm.get('name')?.invalid && myForm.get('name')?.touched)">
                                 <p class="error" > Your name is required!</p>
                             </div>
                         </div>
@@ -49,13 +41,13 @@
                         <div class="inputwidth">
                             <div class="inputfield">
                                 <input formControlName="email" type="email" placeholder="Your email" name="email" #emailField required>
-                                <div *ngIf="(myForm.get('email')?.invalid && isSubmitted) ">
+                                <div *ngIf="(myForm.get('email')?.invalid && isSubmitted) || (myForm.get('email')?.invalid && myForm.get('email')?.touched) ">
                                     <img src="../../assets/img/inputwrong.svg" alt="">
                                 </div>
-                                <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div>
+                                <!-- <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div> -->
                                 <div *ngIf="myForm.get('email')?.valid"><img src="../../assets/img/inputcorrect.svg" alt=""></div>
                             </div>
-                            <div *ngIf="myForm.get('email')?.invalid && isSubmitted">
+                            <div *ngIf="(myForm.get('email')?.invalid && isSubmitted) || (myForm.get('email')?.invalid && myForm.get('email')?.touched)">
                                 <p class="error" > Your email is required!</p>
                             </div>
                         </div>
@@ -63,19 +55,17 @@
                         <div class="inputwidth">
                             <div class="textareafield">
                                 <textarea formControlName="message" placeholder="Your message ..." name="message" #messageField required></textarea>
-                                <div *ngIf="myForm.get('message')?.invalid && isSubmitted">
+                                <div *ngIf="(myForm.get('message')?.invalid && isSubmitted) || (myForm.get('message')?.invalid && myForm.get('message')?.touched)">
                                     <img src="../../assets/img/inputwrong.svg" alt="">
                                 </div>
-                                <div *ngIf="myForm.get('message')?.invalid && myForm.get('message')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div>
+                                <!-- <div *ngIf="myForm.get('message')?.invalid && myForm.get('message')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div> -->
                                 <div *ngIf="myForm.get('message')?.valid"><img src="../../assets/img/inputcorrect.svg" alt=""></div>
                             </div>
-                            <div *ngIf="myForm.get('message')?.invalid && isSubmitted">
+                            <div *ngIf="(myForm.get('message')?.invalid && isSubmitted)  || (myForm.get('message')?.invalid && myForm.get('message')?.touched)">
                                 <p class="error" > Messages must be at least 5 characters long.</p>
                             </div>
                         </div>
                     
-
-
                     <button class="main-button" type="submit" #btnSendField >Send message :)</button>
                     <p class="sendP dnone" id="btnSend"> Message successfully sended!</p>
                 </div>
