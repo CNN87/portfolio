@@ -9,12 +9,14 @@
     background-color: var(--mainDark);
     overflow-x: clip;
     gap: 10px;
+    font-size: 14px;
 }
 .imprint-content{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    
+    margin-inline: auto;
     align-items: baseline;
+    width: 90%;
 
 }

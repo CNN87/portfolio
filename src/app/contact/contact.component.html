@@ -1,6 +1,6 @@
 <section class="overflow-hidden padding-bottom">
     <div class="container">
-        <img class="red-shadow-2" src="../../assets/img/red-shadow-2.png" alt="">
+        <img class="red-shadow-2" src="./assets/img/red-shadow-2.png" alt="">
         <div class="contact-h1-wrapper" data-aos="fade-left">
             <h1>Contact</h1>
             <div class="orange-line-container">
@@ -28,10 +28,10 @@
                             <div class="inputfield">
                                 <input formControlName="name" type="text" placeholder="Your name" name="name" #nameField required>
                                 <div *ngIf="(myForm.get('name')?.invalid && isSubmitted) || (myForm.get('name')?.invalid && myForm.get('name')?.touched)">
-                                    <img src="../../assets/img/inputwrong.svg" alt="">
+                                    <img src="./assets/img/inputwrong.svg" alt="">
                                 </div>
-                                <!-- <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div> -->
-                                <div *ngIf="myForm.get('name')?.valid"><img src="../../assets/img/inputcorrect.svg" alt=""></div>
+                                
+                                <div *ngIf="myForm.get('name')?.valid"><img src="./assets/img/inputcorrect.svg" alt=""></div>
                             </div>
                             <div *ngIf="(myForm.get('name')?.invalid && isSubmitted) || (myForm.get('name')?.invalid && myForm.get('name')?.touched)">
                                 <p class="error" > Your name is required!</p>
@@ -42,10 +42,10 @@
                             <div class="inputfield">
                                 <input formControlName="email" type="email" placeholder="Your email" name="email" #emailField required>
                                 <div *ngIf="(myForm.get('email')?.invalid && isSubmitted) || (myForm.get('email')?.invalid && myForm.get('email')?.touched) ">
-                                    <img src="../../assets/img/inputwrong.svg" alt="">
+                                    <img src="./assets/img/inputwrong.svg" alt="">
                                 </div>
-                                <!-- <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div> -->
-                                <div *ngIf="myForm.get('email')?.valid"><img src="../../assets/img/inputcorrect.svg" alt=""></div>
+                                
+                                <div *ngIf="myForm.get('email')?.valid"><img src="./assets/img/inputcorrect.svg" alt=""></div>
                             </div>
                             <div *ngIf="(myForm.get('email')?.invalid && isSubmitted) || (myForm.get('email')?.invalid && myForm.get('email')?.touched)">
                                 <p class="error" > Your email is required!</p>
@@ -56,10 +56,10 @@
                             <div class="textareafield">
                                 <textarea formControlName="message" placeholder="Your message ..." name="message" #messageField required></textarea>
                                 <div *ngIf="(myForm.get('message')?.invalid && isSubmitted) || (myForm.get('message')?.invalid && myForm.get('message')?.touched)">
-                                    <img src="../../assets/img/inputwrong.svg" alt="">
+                                    <img src="./assets/img/inputwrong.svg" alt="">
                                 </div>
-                                <!-- <div *ngIf="myForm.get('message')?.invalid && myForm.get('message')?.touched"><img src="../../assets/img/inputwrong.svg" alt=""></div> -->
-                                <div *ngIf="myForm.get('message')?.valid"><img src="../../assets/img/inputcorrect.svg" alt=""></div>
+                                
+                                <div *ngIf="myForm.get('message')?.valid"><img src="./assets/img/inputcorrect.svg" alt=""></div>
                             </div>
                             <div *ngIf="(myForm.get('message')?.invalid && isSubmitted)  || (myForm.get('message')?.invalid && myForm.get('message')?.touched)">
                                 <p class="error" > Messages must be at least 5 characters long.</p>
@@ -76,7 +76,7 @@
         </div>
         <div class="up-button" >
             <a href="#">
-                <img src="../../assets/img/scrolluparrow.svg" alt="">
+                <img src="./assets/img/scrolluparrow.svg" alt="">
             </a>
         </div>
     </div>

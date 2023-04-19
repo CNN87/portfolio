@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImprintComponent } from './imprint/imprint.component';
+import { DataprotectionComponent } from './dataprotection/dataprotection.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ImprintComponent } from './imprint/imprint.component';
     PortfolioComponent,
     ContactComponent,
     FooterComponent,
-    ImprintComponent
+    ImprintComponent,
+    DataprotectionComponent
   ],
   imports: [
     BrowserModule,

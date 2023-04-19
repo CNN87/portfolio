@@ -206,3 +206,21 @@ section {
     font-size: var(--fw-mainHeadline);
     font-weight: var(--fw-bold);
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+ ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #1f2937;
+}
+
+ ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(var(--mainDark), var(--mainRed));
+}
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background: linear-gradient(var(--mainPurple), var(--mainOrange));
+}

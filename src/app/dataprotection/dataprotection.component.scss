@@ -1,0 +1,36 @@
+.data-protection-container{
+    padding-top: 180px;
+    
+    max-width: 90%;
+    min-width: 90%;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: flex-start;
+    margin-inline: auto;
+    align-items: baseline;
+    width: 90%;
+    overflow-x: clip;
+    gap: 10px;
+    font-size: 14px;
+}
+h1 {
+    font-size: x-large;
+}
+
+// .up-button {
+//     display: flex;
+//     position: relative;
+//     right: 30px;
+//     bottom: 10px;
+//     justify-content: flex-end;
+//     margin: 80px 40px 40px 40px;
+
+//     a {
+//         z-index: 3;
+
+//         &:hover{
+//             filter: invert(44%) sepia(97%) saturate(1031%) hue-rotate(0deg) brightness(98%) contrast(102%);
+//         }
+//     }
+// }
