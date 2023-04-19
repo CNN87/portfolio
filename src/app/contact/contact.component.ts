@@ -52,7 +52,6 @@ export class ContactComponent implements OnInit  {
     btnSendField.disabled = true;
 
     // animation triggern
-
     let fd = new FormData();
     fd.append('name', nameField.value);
     fd.append('email', emailField.value);
@@ -70,7 +69,7 @@ export class ContactComponent implements OnInit  {
     document.getElementById('btnSend')?.classList.remove('dnone');
     setTimeout(function(){document.getElementById('btnSend')?.classList.add('dnone')}, 2000);
 
-      // text anzeigen nachricht gesendet
+    // text anzeigen nachricht gesendet
     nameField.disabled = false;
     emailField.disabled = false;
     messageField.disabled = false;
